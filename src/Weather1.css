@@ -59,19 +59,7 @@ main {
     font-style: italic;
     text-shadow: 2px 2px rgba(50 50 70 0.5);
 }
-/* .weather-box {
-    text-align: center;
-    border: none;
-    background-color: rgba(154, 198, 200, 0.641);
-    box-sizing: border-box;
-    margin: 3px auto;
-    padding: none;
-    width: 55%;
-    height: 120px;
-    box-shadow: 30px;
-    border-radius: 5px;
-    
-} */
+
 .weather-box {
     justify-content: center;
     display: flex;
@@ -101,7 +89,7 @@ main {
     align-items: center;
     justify-content: center;  
 }
-.temp{
+.temp ,.sun{
     display: flex;
     color: #fff;
     align-items: center;
@@ -113,4 +101,7 @@ main {
 }
 .temp .humidity {
     padding-right: 2.1rem;
+}
+.sun .sunrise{
+    padding-right: 1rem;
 }

@@ -70,6 +70,27 @@ const Weather1 = () => {
     return url;
   };
 
+  const getTime = (timestamp) => {
+    let date = new Date(timestamp*1000);
+    let flag = true;
+    let hours = date.getHours();
+    if(hours > 11) {
+      flag = false;
+      if(hours > 12) 
+        hours -= 12;
+    }
+    
+    let minutes = "0" + date.getMinutes();
+    let seconds = "0" + date.getSeconds();
+
+    let formmatedTime = hours + ":" +minutes.substr(-2);
+    if(flag)
+      formmatedTime += " AM";
+    else
+      formmatedTime += " PM"
+    return formmatedTime;
+  }
+
   const dateBuilder = (d) => {
     let months = [
       "January",
@@ -160,6 +181,17 @@ const Weather1 = () => {
               <div className="pressure">
                 <span>Pressure : </span>
                 {Math.round(weather.main.pressure)}
+              </div>
+            </div>
+
+            <div className="sun">
+              <div className="sunrise">
+                <span>Sunrise : </span>
+                {getTime(weather.sys.sunrise)}
+              </div>
+              <div className="sunset">
+                <span>Sunset : </span>
+                {getTime(weather.sys.sunset)}
               </div>
             </div>
 
